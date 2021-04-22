@@ -1,7 +1,9 @@
 import React from 'react';
 
+
 function CountriesHeader() {
-return (<thead>
+return (
+    <thead>
     <tr>
         <td>#</td>
         <td>Name</td>
@@ -9,7 +11,8 @@ return (<thead>
         <td>Area</td>
         <td>Population</td>
     </tr>
-    </thead>)
+</thead>
+)
 }
 
 export default CountriesHeader;

@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import Main from './components/main.js';
+import Button from './components/button';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <main>dsfdsfds</main>
+       <Button/>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

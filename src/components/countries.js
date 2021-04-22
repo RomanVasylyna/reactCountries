@@ -1,7 +1,10 @@
 import React from 'react';
 
-function Countries({ country }) {
-    return (<thead>
+function Countries(countries) {
+return (
+            
+    <tbody>
+    {countries.map(country =>
         <tr>
             <td>{country.index}</td>
             <td>{country.name}</td>
@@ -9,7 +12,11 @@ function Countries({ country }) {
             <td>{country.area}</td>
             <td>{country.population}</td>
         </tr>
-    </thead>)
+
+    )}
+</tbody>
+)
 }
+
 
 export default Countries;
