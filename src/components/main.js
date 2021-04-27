@@ -10,9 +10,14 @@ function Main() {
 //первое значение это переменная а второе это функция которая будет обрабатывать ту переменную
 let [countries, setCountries] = useState([]);   
 
-let showName = name => alert(name);
+const showName = name => alert(name);
 
-let searchVal = val => alert(val);
+const filterCountries = e => {
+let val = e;
+// let newRegions = countries.filter(country => country.name.toLowerCase().includes(val) || country.capital.toLowerCase().includes(val));
+// console.log(newRegions);
+setCountries(countries.filter(country => country.name.toLowerCase().includes(val) || country.capital.toLowerCase().includes(val)));
+};
 
 
 // useEffect - это хук который срабатывает при обновлении компонента
@@ -21,7 +26,7 @@ let searchVal = val => alert(val);
 useEffect(() => {
     fetch('https://restcountries.eu/rest/v2/all')
     .then(res => res.json())
-    .then(data => {
+    .then(data => {  
     setCountries(data.map((country, index) => {
     let {name, area, capital, population, alpha3Code} = country;
 
@@ -42,7 +47,7 @@ useEffect(() => {
 
 return(<>
 {/* Searching Countries */}
-<CountriesSearch searchVal={searchVal}/>
+<CountriesSearch filterCountries={ filterCountries }/>
 
 <Table striped hover bordered size="sm">
 {/* Table Header */}
